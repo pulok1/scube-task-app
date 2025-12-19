@@ -4,13 +4,13 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+## Features
+- Login Screen
+- Dashboard with Summery/SLD/Data tabs
+- Interactive bottom grid navigation
+- Data View / Revenue View with toggle
+- Expandable "Data & Cost Info" card in Revenue View
+- No Data Screen for inactive modules
+- Full navigation flow
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Built with Flutter 3.x • Supports Android, iOS, Web, Desktop
