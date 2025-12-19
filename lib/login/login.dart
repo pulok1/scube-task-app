@@ -45,8 +45,8 @@ class _LoginPageState extends State<LoginPage> {
                     decoration: const BoxDecoration(
                       color: Color(0xFF0099FF),
                       borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        topRight: Radius.circular(20),
+                        topLeft: Radius.circular(0),
+                        topRight: Radius.circular(0),
                       ),
                     ),
                     padding: const EdgeInsets.symmetric(vertical: 50),
@@ -104,8 +104,8 @@ class _LoginPageState extends State<LoginPage> {
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(20),
                             topRight: Radius.circular(20),
-                            bottomLeft: Radius.circular(20),
-                            bottomRight: Radius.circular(20),
+                            bottomLeft: Radius.circular(0),
+                            bottomRight: Radius.circular(0),
                           ),
                         ),
                         padding: const EdgeInsets.all(32),
@@ -261,14 +261,10 @@ class _LoginPageState extends State<LoginPage> {
                                       horizontal: 8,
                                       vertical: 2,
                                     ),
-                                    decoration: BoxDecoration(
-                                      color: Colors.yellow[700],
-                                      borderRadius: BorderRadius.circular(4),
-                                    ),
                                     child: const Text(
                                       'Register Now',
                                       style: TextStyle(
-                                        color: Colors.black87,
+                                        color: Color(0xFF0099FF),
                                         fontSize: 14,
                                         fontWeight: FontWeight.w600,
                                       ),
