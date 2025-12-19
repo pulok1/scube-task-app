@@ -13,15 +13,6 @@ class NoDataScreen extends StatelessWidget {
         leading: Row(
           children: [
             const SizedBox(width: 8),
-            Container(
-              width: 24,
-              height: 24,
-              decoration: const BoxDecoration(
-                color: Colors.orange,
-                shape: BoxShape.circle,
-              ),
-            ),
-            const SizedBox(width: 8),
             GestureDetector(
               onTap: () {
                 Navigator.pop(context);
@@ -90,14 +81,11 @@ class NoDataScreen extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              // Placeholder for the asset image
-              // Replace 'assets/no_data.png' with your actual asset path
               Image.asset(
-                'assets/no_data.png',
+                'assets/images/no_data.png',
                 width: 200,
                 height: 200,
                 errorBuilder: (context, error, stackTrace) {
-                  // Fallback UI when image is not available
                   return Container(
                     width: 200,
                     height: 200,
@@ -152,23 +140,23 @@ class NoDataScreen extends StatelessWidget {
                   );
                 },
               ),
-              const SizedBox(height: 30),
-              const Text(
-                'No data is here,',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.grey,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              const Text(
-                'please wait.',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.grey,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
+              // const SizedBox(height: 30),
+              // const Text(
+              //   'No data is here,',
+              //   style: TextStyle(
+              //     fontSize: 16,
+              //     color: Colors.grey,
+              //     fontWeight: FontWeight.w400,
+              //   ),
+              // ),
+              // const Text(
+              //   'please wait.',
+              //   style: TextStyle(
+              //     fontSize: 16,
+              //     color: Colors.grey,
+              //     fontWeight: FontWeight.w400,
+              //   ),
+              // ),
             ],
           ),
         ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class DataView extends StatefulWidget {
   final bool initialIsDataView;
   const DataView({Key? key, required this.initialIsDataView}) : super(key: key);
@@ -18,7 +17,7 @@ class _DataViewState extends State<DataView> {
   @override
   void initState() {
     super.initState();
-    isDataView = widget.initialIsDataView; 
+    isDataView = widget.initialIsDataView;
   }
 
   @override
@@ -31,8 +30,8 @@ class _DataViewState extends State<DataView> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
-    Navigator.pop(context); 
-  },
+            Navigator.pop(context);
+          },
         ),
         title: const Text(
           'SCM',
@@ -217,10 +216,7 @@ class _DataViewState extends State<DataView> {
                     ),
                     Text(
                       isDataView ? 'kWh/Sqft' : 'tk',
-                      style: const TextStyle(
-                        fontSize: 14,
-                        color: Colors.grey,
-                      ),
+                      style: const TextStyle(fontSize: 14, color: Colors.grey),
                     ),
                   ],
                 ),
@@ -286,7 +282,6 @@ class _DataViewState extends State<DataView> {
             ),
           ),
           const SizedBox(width: 8),
-          
         ],
       ),
     );
@@ -296,7 +291,7 @@ class _DataViewState extends State<DataView> {
     if (!isDataView) {
       return _buildRevenueView();
     }
-    
+
     if (isTodayData) {
       return _buildTodayDataView();
     } else {
@@ -319,28 +314,37 @@ class _DataViewState extends State<DataView> {
             children: const [
               Text(
                 'Energy Chart',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                ),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
               ),
               Text(
                 '5.53 kw',
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
             ],
           ),
           const SizedBox(height: 16),
           _buildDataItem('Data A', '2798.50 (29.53%)', '35689 ৳', Colors.blue),
           const Divider(height: 24),
-          _buildDataItem('Data B', '72598.50 (35.39%)', '525989 ৳', Colors.purple),
+          _buildDataItem(
+            'Data B',
+            '72598.50 (35.39%)',
+            '525989 ৳',
+            Colors.purple,
+          ),
           const Divider(height: 24),
-          _buildDataItem('Data C', '6598.36 (83.90%)', '569875৳ ৳', Colors.green),
+          _buildDataItem(
+            'Data C',
+            '6598.36 (83.90%)',
+            '569875৳ ৳',
+            Colors.green,
+          ),
           const Divider(height: 24),
-          _buildDataItem('Data D', '6598.26 (36.59%)', '356987 ৳', Colors.orange),
+          _buildDataItem(
+            'Data D',
+            '6598.26 (36.59%)',
+            '356987 ৳',
+            Colors.orange,
+          ),
         ],
       ),
     );
@@ -354,15 +358,14 @@ class _DataViewState extends State<DataView> {
           margin: const EdgeInsets.symmetric(horizontal: 16),
           child: Row(
             children: [
-              Container(
-                width: 16,
-                height: 16,
-                
-              ),
+              Container(width: 16, height: 16),
               const SizedBox(width: 12),
               Expanded(
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 12,
+                  ),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(8),
@@ -380,7 +383,10 @@ class _DataViewState extends State<DataView> {
               const SizedBox(width: 12),
               Expanded(
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 12,
+                  ),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(8),
@@ -432,13 +438,33 @@ class _DataViewState extends State<DataView> {
                 ],
               ),
               const SizedBox(height: 16),
-              _buildDataItem('Data A', '2798.50 (29.53%)', '35689৳', Colors.blue),
+              _buildDataItem(
+                'Data A',
+                '2798.50 (29.53%)',
+                '35689৳',
+                Colors.blue,
+              ),
               const Divider(height: 24),
-              _buildDataItem('Data B', '72598.50 (35.39%)', '525989 ৳', Colors.purple),
+              _buildDataItem(
+                'Data B',
+                '72598.50 (35.39%)',
+                '525989 ৳',
+                Colors.purple,
+              ),
               const Divider(height: 24),
-              _buildDataItem('Data C', '6598.36 (83.00%)', '569875৳ ৳', Colors.green),
+              _buildDataItem(
+                'Data C',
+                '6598.36 (83.00%)',
+                '569875৳ ৳',
+                Colors.green,
+              ),
               const Divider(height: 24),
-              _buildDataItem('Data D', '6598.26 (36.59%)', '356987 ৳', Colors.orange),
+              _buildDataItem(
+                'Data D',
+                '6598.26 (36.59%)',
+                '356987 ৳',
+                Colors.orange,
+              ),
             ],
           ),
         ),
@@ -467,13 +493,33 @@ class _DataViewState extends State<DataView> {
                 ],
               ),
               const SizedBox(height: 16),
-              _buildDataItem('Data A', '2798.50 (29.53%)', '35689৳', Colors.blue),
+              _buildDataItem(
+                'Data A',
+                '2798.50 (29.53%)',
+                '35689৳',
+                Colors.blue,
+              ),
               const Divider(height: 24),
-              _buildDataItem('Data B', '72598.50 (35.39%)', '525989 ৳', Colors.purple),
+              _buildDataItem(
+                'Data B',
+                '72598.50 (35.39%)',
+                '525989 ৳',
+                Colors.purple,
+              ),
               const Divider(height: 24),
-              _buildDataItem('Data C', '6598.36 (83.00%)', '569875৳ ৳', Colors.green),
+              _buildDataItem(
+                'Data C',
+                '6598.36 (83.00%)',
+                '569875৳ ৳',
+                Colors.green,
+              ),
               const Divider(height: 24),
-              _buildDataItem('Data D', '6598.26 (36.59%)', '356987 ৳', Colors.orange),
+              _buildDataItem(
+                'Data D',
+                '6598.26 (36.59%)',
+                '356987 ৳',
+                Colors.orange,
+              ),
             ],
           ),
         ),
@@ -482,71 +528,69 @@ class _DataViewState extends State<DataView> {
   }
 
   Widget _buildRevenueView() {
-  return Container(
-    margin: const EdgeInsets.symmetric(horizontal: 16),
-    padding: const EdgeInsets.all(0), // Remove inner padding to let ExpansionTile handle it
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(12),
-    ),
-    child: ExpansionTile(
-      initiallyExpanded: isRevenueExpanded,
-      onExpansionChanged: (expanded) {
-        setState(() {
-          isRevenueExpanded = expanded;
-        });
-      },
-      tilePadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      childrenPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8).copyWith(bottom: 16),
-      backgroundColor: Colors.white,
-      collapsedBackgroundColor: Colors.white,
-      shape: RoundedRectangleBorder(
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.all(0),
+      decoration: BoxDecoration(
+        color: Colors.white,
         borderRadius: BorderRadius.circular(12),
       ),
-      title: Row(
+      child: ExpansionTile(
+        initiallyExpanded: isRevenueExpanded,
+        onExpansionChanged: (expanded) {
+          setState(() {
+            isRevenueExpanded = expanded;
+          });
+        },
+        tilePadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        childrenPadding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 8,
+        ).copyWith(bottom: 16),
+        backgroundColor: Colors.white,
+        collapsedBackgroundColor: Colors.white,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        title: Row(
+          children: [
+            const Icon(Icons.bar_chart, size: 20),
+            const SizedBox(width: 8),
+            const Text(
+              'Data & Cost Info',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+            ),
+            const Spacer(),
+            Container(
+              width: 28,
+              height: 28,
+              decoration: const BoxDecoration(
+                color: Colors.blue,
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(Icons.check, color: Colors.white, size: 16),
+            ),
+          ],
+        ),
+        trailing: const Icon(
+          Icons.keyboard_arrow_down,
+          size: 24,
+          color: Colors.grey,
+        ),
         children: [
-          const Icon(Icons.bar_chart, size: 20),
-          const SizedBox(width: 8),
-          const Text(
-            'Data & Cost Info',
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          const Spacer(),
-          Container(
-            width: 28,
-            height: 28,
-            decoration: const BoxDecoration(
-              color: Colors.blue,
-              shape: BoxShape.circle,
-            ),
-            child: const Icon(Icons.check, color: Colors.white, size: 16),
+          Column(
+            children: [
+              _buildRevenueItem('Data 1', '2798.50 (29.53%)', '35689 ৳'),
+              const Divider(height: 24),
+              _buildRevenueItem('Data 2', '2798.50 (29.53%)', '35689 ৳'),
+              const Divider(height: 24),
+              _buildRevenueItem('Data 3', '2798.50 (29.53%)', '35689 ৳'),
+              const Divider(height: 24),
+              _buildRevenueItem('Data 4', '2798.50 (29.53%)', '35689 ৳'),
+            ],
           ),
         ],
       ),
-      trailing: const Icon(
-        Icons.keyboard_arrow_down,
-        size: 24,
-        color: Colors.grey,
-      ),
-      children: [
-        Column(
-          children: [
-            _buildRevenueItem('Data 1', '2798.50 (29.53%)', '35689 ৳'),
-            const Divider(height: 24),
-            _buildRevenueItem('Data 2', '2798.50 (29.53%)', '35689 ৳'),
-            const Divider(height: 24),
-            _buildRevenueItem('Data 3', '2798.50 (29.53%)', '35689 ৳'),
-            const Divider(height: 24),
-            _buildRevenueItem('Data 4', '2798.50 (29.53%)', '35689 ৳'),
-          ],
-        ),
-      ],
-    ),
-  );
-}
+    );
+  }
 
   Widget _buildDataItem(String label, String data, String cost, Color color) {
     return Row(
@@ -562,10 +606,7 @@ class _DataViewState extends State<DataView> {
         const SizedBox(width: 12),
         Text(
           label,
-          style: const TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.w600,
-          ),
+          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
         ),
         const Spacer(),
         Column(
@@ -614,30 +655,18 @@ class _DataViewState extends State<DataView> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          label,
-          style: const TextStyle(
-            fontSize: 14,
-            color: Colors.grey,
-          ),
-        ),
+        Text(label, style: const TextStyle(fontSize: 14, color: Colors.grey)),
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Text(
               data,
-              style: const TextStyle(
-                fontSize: 13,
-                fontWeight: FontWeight.w500,
-              ),
+              style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
             ),
             const SizedBox(height: 4),
             Text(
               cost,
-              style: const TextStyle(
-                fontSize: 13,
-                fontWeight: FontWeight.w500,
-              ),
+              style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
             ),
           ],
         ),

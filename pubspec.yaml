@@ -23,6 +23,3 @@ flutter:
   # Add your logo asset here
   assets:
     - assets/images/
-    # - assets/images/logo.png/
-    # - assets/images/no_data.png
-    # - assets/icons

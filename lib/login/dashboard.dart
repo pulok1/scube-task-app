@@ -2,26 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:scube_task_app/pages/data_view.dart';
 import 'package:scube_task_app/pages/no_data_screen.dart';
 
-// void main() {
-//   runApp(const SCMDashboardApp());
-// }
-
-// class SCMDashboardApp extends StatelessWidget {
-//   const SCMDashboardApp({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//         scaffoldBackgroundColor: Colors.grey[100],
-//       ),
-//       home: const DashboardScreen(),
-//     );
-//   }
-// }
-
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key}) : super(key: key);
 
@@ -52,7 +32,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
           Stack(
             children: [
               IconButton(
-                icon: const Icon(Icons.notifications_outlined, color: Colors.black),
+                icon: const Icon(
+                  Icons.notifications_outlined,
+                  color: Colors.black,
+                ),
                 onPressed: () {},
               ),
               Positioned(
@@ -85,9 +68,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 ],
               ),
             ),
-            
+
             const SizedBox(height: 16),
-            
+
             // Electricity Header
             Container(
               width: double.infinity,
@@ -102,9 +85,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 ),
               ),
             ),
-            
+
             const SizedBox(height: 16),
-            
+
             // Power Circle
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 16),
@@ -158,9 +141,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 ),
               ),
             ),
-            
+
             const SizedBox(height: 16),
-            
+
             // Source/Load Toggle
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 16),
@@ -178,7 +161,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       ),
                       child: const Text(
                         'Source',
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
                   ),
@@ -202,9 +188,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 ],
               ),
             ),
-            
+
             const SizedBox(height: 16),
-            
+
             // Data View Cards
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 16),
@@ -236,9 +222,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 ],
               ),
             ),
-            
+
             const SizedBox(height: 16),
-            
+
             // Bottom Grid
             Container(
               margin: const EdgeInsets.all(16),
@@ -253,11 +239,19 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   Row(
                     children: [
                       Expanded(
-                        child: _buildGridItem('Analysis Pro', '📊', Colors.orange),
+                        child: _buildGridItem(
+                          'Analysis Pro',
+                          '📊',
+                          Colors.orange,
+                        ),
                       ),
                       const SizedBox(width: 12),
                       Expanded(
-                        child: _buildGridItem('G. Generator', '🔧', Colors.brown),
+                        child: _buildGridItem(
+                          'G. Generator',
+                          '🔧',
+                          Colors.brown,
+                        ),
                       ),
                     ],
                   ),
@@ -265,11 +259,19 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   Row(
                     children: [
                       Expanded(
-                        child: _buildGridItem('Plant Summary', '🏭', Colors.orange),
+                        child: _buildGridItem(
+                          'Plant Summary',
+                          '🏭',
+                          Colors.orange,
+                        ),
                       ),
                       const SizedBox(width: 12),
                       Expanded(
-                        child: _buildGridItem('Natural Gas', '🔥', Colors.orange),
+                        child: _buildGridItem(
+                          'Natural Gas',
+                          '🔥',
+                          Colors.orange,
+                        ),
                       ),
                     ],
                   ),
@@ -277,18 +279,26 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   Row(
                     children: [
                       Expanded(
-                        child: _buildGridItem('D. Generator', '⚡', Colors.orange),
+                        child: _buildGridItem(
+                          'D. Generator',
+                          '⚡',
+                          Colors.orange,
+                        ),
                       ),
                       const SizedBox(width: 12),
                       Expanded(
-                        child: _buildGridItem('Water Process', '🚗', Colors.blue),
+                        child: _buildGridItem(
+                          'Water Process',
+                          '🚗',
+                          Colors.blue,
+                        ),
                       ),
                     ],
                   ),
                 ],
               ),
             ),
-            
+
             const SizedBox(height: 16),
           ],
         ),
@@ -310,7 +320,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
           decoration: BoxDecoration(
             border: Border(
               bottom: BorderSide(
-                color: isSelected ? const Color(0xFF2196F3) : Colors.transparent,
+                color:
+                    isSelected ? const Color(0xFF2196F3) : Colors.transparent,
                 width: 3,
               ),
             ),
@@ -337,143 +348,161 @@ class _DashboardScreenState extends State<DashboardScreen> {
     IconData icon,
   ) {
     return GestureDetector(
-    onTap: isActive
-        ? () {
-            if (title == 'Data View') {
-              // Open DataView starting on Data View tab
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const DataView(initialIsDataView: true),
-                ),
-              );
-            } else if (title == 'Data Type 2') {
-              // Open DataView starting on Revenue View tab
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const DataView(initialIsDataView: false),
-                ),
-              );
-            }
-          }
-        : () {
-            // Inactive → NoDataScreen
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const NoDataScreen()),
-            );
-          },
-    child: Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.grey[200]!),
-      ),
-      child: Row(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: iconColor.withOpacity(0.1),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Icon(icon, color: iconColor, size: 24),
-          ),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Text(
-                      title,
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                      ),
+      onTap:
+          isActive
+              ? () {
+                if (title == 'Data View') {
+                  // Open DataView starting on Data View tab
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder:
+                          (context) => const DataView(initialIsDataView: true),
                     ),
-                    const SizedBox(width: 8),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                      decoration: BoxDecoration(
-                        color: isActive ? Colors.blue[50] : Colors.grey[200],
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Text(
-                        status,
-                        style: TextStyle(
-                          fontSize: 11,
-                          color: isActive ? Colors.blue : Colors.grey,
+                  );
+                } else if (title == 'Data Type 2') {
+                  // Open DataView starting on Revenue View tab
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder:
+                          (context) => const DataView(initialIsDataView: false),
+                    ),
+                  );
+                }
+              }
+              : () {
+                // Inactive → NoDataScreen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const NoDataScreen()),
+                );
+              },
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: Colors.grey[200]!),
+        ),
+        child: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: iconColor.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Icon(icon, color: iconColor, size: 24),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        title,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 8),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text('Data 1', style: TextStyle(color: Colors.grey, fontSize: 12)),
-                        Text('55505.63', style: TextStyle(fontWeight: FontWeight.w500)),
-                      ],
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text('Data 2', style: TextStyle(color: Colors.grey, fontSize: 12)),
-                        Text('58805.63', style: TextStyle(fontWeight: FontWeight.w500)),
-                      ],
-                    ),
-                    const SizedBox(width: 20),
-                  ],
-                ),
-              ],
+                      const SizedBox(width: 8),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 8,
+                          vertical: 2,
+                        ),
+                        decoration: BoxDecoration(
+                          color: isActive ? Colors.blue[50] : Colors.grey[200],
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Text(
+                          status,
+                          style: TextStyle(
+                            fontSize: 11,
+                            color: isActive ? Colors.blue : Colors.grey,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            'Data 1',
+                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                          ),
+                          Text(
+                            '55505.63',
+                            style: TextStyle(fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            'Data 2',
+                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                          ),
+                          Text(
+                            '58805.63',
+                            style: TextStyle(fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(width: 20),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-          const Icon(Icons.chevron_right, color: Colors.grey),
-        ],
+            const Icon(Icons.chevron_right, color: Colors.grey),
+          ],
+        ),
       ),
-    ),
-  );
+    );
   }
 
   Widget _buildGridItem(String title, String emoji, Color accentColor) {
-  return GestureDetector(
-    onTap: () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const NoDataScreen()),
-      );
-    },
-    child: Container(
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: Colors.grey[50],
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.grey[200]!),
-      ),
-      child: Row(
-        children: [
-          Text(emoji, style: const TextStyle(fontSize: 24)),
-          const SizedBox(width: 8),
-          Expanded(
-            child: Text(
-              title,
-              style: const TextStyle(
-                fontSize: 13,
-                fontWeight: FontWeight.w500,
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const NoDataScreen()),
+        );
+      },
+      child: Container(
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color: Colors.grey[50],
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(color: Colors.grey[200]!),
+        ),
+        child: Row(
+          children: [
+            Text(emoji, style: const TextStyle(fontSize: 24)),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-    ),
-  );
-}
+    );
+  }
 }
